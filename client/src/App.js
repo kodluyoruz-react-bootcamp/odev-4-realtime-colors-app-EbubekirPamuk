@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './App.css';
 import { useEffect } from "react";
 import { io } from 'socket.io-client';
@@ -11,9 +10,7 @@ function App() {
     });
   }, [])
   
-
   return <div className="App">
-
   </div>
 
 
