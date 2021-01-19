@@ -1,2 +1,2 @@
 # 🚧 _Underconstruction_
-![Underconstruction](https://i.hizliresim.com/wfxW9L.png "from Ebubekir PAMUK :")
+![Underconstruction](https://i.hizliresim.com/qwFRyT.png "from Ebubekir PAMUK :)")
