@@ -15,7 +15,7 @@ export const disconnectSocket = () => {
 	if (socket) socket.disconnect();
 };
 
-export const emitColor = (color) => {
+export const sendColor = (color) => {
     if (socket) socket.emit("new-color", color);    
 };
 
