@@ -9,7 +9,7 @@ function App() {
       transports: ["websocket"],
     });
   }, [])
-  
+
   return <div className="App">
   </div>
 
