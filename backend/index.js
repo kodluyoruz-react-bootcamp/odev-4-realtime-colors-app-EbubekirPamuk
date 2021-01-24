@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('a user joined');
 
   socket.on("new-color", (color) => {
     console.log(color);
@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
     socket.broadcast.emit("receive-color", color);
   });
 
-  socket.on('disconnect', () => console.log("a user disconnected"))
+  socket.on('disconnect', () => console.log("a user left"))
 });
 
 http.listen(3000, () => {
