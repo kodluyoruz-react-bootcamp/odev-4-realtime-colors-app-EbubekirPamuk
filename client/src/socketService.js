@@ -32,7 +32,7 @@ export const subscribeInitialColor = (sc) => {
     if (!socket) return true;
   
     socket.on("color-received", (data) => {
-      console.log("color received successfully", data);
+      console.log("color received successfully from all users", data);
       sc(data);
     });
   };

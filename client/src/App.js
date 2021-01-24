@@ -1,15 +1,30 @@
 import './App.css';
-import { useEffect } from "react";
-import { io } from 'socket.io-client';
+import { useEffect, useState } from "react";
+import { initSocket, disconnectSocket, sendColor, subscribeToColor, subscribeInitialColor } from "./socketService";
+
 
 function App() {
+  const [color,setColor]=useState('#A88179');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(color);
+    sendColor(color); 
+  };
 
   useEffect(() => {
-    const socket = io("http://localhost:3000", {
-      transports: ["websocket"],
-    });
-  }, [])
+    initSocket();
 
+    subscribeInitialColor((data) => {
+      setColor(data);
+    });
+    subscribeToColor((color) => {
+      setColor(color);
+    });
+    return () => disconnectSocket();
+  }, [setColor])
+
+  
   return <div className="App">
   </div>
 
