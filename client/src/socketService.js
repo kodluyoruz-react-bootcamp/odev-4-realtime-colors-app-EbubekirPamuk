@@ -1,11 +1,11 @@
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 let socket;
 
 export const initSocket = () => {
-    socket = io('https://localhost:3000', {
-        transports: ['websocket']
-    })
+    socket=io("http://localhost:3000", {
+        transports:["websocket"]});
+
     console.log("connecting...")
     socket.on("connect", () => console.log("connected"));
 }
